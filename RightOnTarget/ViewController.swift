@@ -15,20 +15,11 @@ class ViewController: UIViewController {
     //загаданное число
     var number: Int = 0
     //раунд
-    var round: Int = 0
+    var round: Int = 1
     //сумма очков за раунд
     var points: Int = 0
 
     @IBAction func checkNumber() {
-        // если игра только начинается
-        if round == 0 {
-            // генерируем случайное число
-            number = Int.random(in: 1...50)
-            // передаем значение случайного числа в label
-            label.text = String(number)
-            // устанавливаем счетчик раундов на 1
-            round = 1
-        } else {
             // получаем значение на слайдере
             let numSlider = Int(slider.value.rounded())
             // сравниваем значение с загаданным и подсчитываем очки
@@ -53,15 +44,21 @@ class ViewController: UIViewController {
             } else {
                 round += 1
             }
-            // генерируем случайное число
-            number = Int.random(in: 1...50)
-            // передаем значение случайного числа в label
-            label.text = String(number)
+        // генерируем случайное число
+        number = Int.random(in: 1...50)
+        // передаем значение случайного числа в label
+        label.text = String(number)
+
         }
-    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidLoad")
+        // генерируем случайное число
+        number = Int.random(in: 1...50)
+        // устанавливаем загаданное число в метку
+        label.text = String(number)
         // Do any additional setup after loading the view.
     }
 
