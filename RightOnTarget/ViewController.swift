@@ -55,15 +55,9 @@ class ViewController: UIViewController {
     lazy var secondViewController: SecondViewController = getSecondViewController()
     // приватный метод, загружающий View Controller
     private func getSecondViewController() -> SecondViewController {
-        // загрузка Storyboard
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        // загрузка View Controller и его сцены со Storyboard
     let viewController = storyboard.instantiateViewController(identifier: "SecondViewController")
     return viewController as! SecondViewController }
-
-    @IBAction func showNextScreen() {
-        self.present(secondViewController, animated: true, completion: nil)
-    }
 
 
     /* Метод loadView (сцена загружается)  выполняется первым в жизненном цикле. Как и viewDidLoad, он вызывается лишь один раз за все время жизни сцены. Если сцена создана с помощью Interface Builder (другим вариантом является создание элементов сцены с помощью программного кода), в данном методе производится загрузка всех размещенных на сцене графических элементов.
