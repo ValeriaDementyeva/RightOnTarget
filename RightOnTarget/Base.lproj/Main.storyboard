@@ -54,17 +54,21 @@
                                 <color key="thumbTintColor" red="0.069366610940000004" green="0.5" blue="0.1048646983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODf-Aa-H6L">
-                                <rect key="frame" x="757" y="337" width="75" height="35"/>
+                                <rect key="frame" x="700.33333333333337" y="337" width="131.66666666666663" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                <buttonConfiguration key="configuration" style="plain" title="О программе">
                                     <color key="baseForegroundColor" red="0.070588235289999995" green="0.50196078430000002" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="showNextScreen" destination="BYZ-38-t0r" eventType="touchUpInside" id="4MC-na-E2C"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.85481133505345419" green="1" blue="0.83789332993825061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6pF-Tc-2m3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IAq-hU-jhV"/>
+                            <constraint firstAttribute="trailing" secondItem="ODf-Aa-H6L" secondAttribute="trailing" constant="20" id="Ioo-Kl-2hI"/>
                             <constraint firstItem="hjY-hI-XRL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Lnc-a5-P6h"/>
                             <constraint firstItem="ODf-Aa-H6L" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="PBh-M5-OcQ"/>
                             <constraint firstItem="xUr-Ky-f18" firstAttribute="top" secondItem="hjY-hI-XRL" secondAttribute="bottom" constant="30" id="Tuk-h3-p9U"/>
@@ -74,8 +78,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hjY-hI-XRL" secondAttribute="trailing" constant="20" id="ewQ-IY-nWv"/>
                             <constraint firstItem="hjY-hI-XRL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fwU-M9-kjp"/>
                             <constraint firstItem="6pF-Tc-2m3" firstAttribute="top" secondItem="xUr-Ky-f18" secondAttribute="bottom" constant="30" id="pdn-VF-Eh4"/>
+                            <constraint firstItem="ODf-Aa-H6L" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yA3-BS-UNj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mjW-gm-YR8"/>
                     <connections>
                         <outlet property="label" destination="6pF-Tc-2m3" id="OAn-xa-v6r"/>
                         <outlet property="slider" destination="hjY-hI-XRL" id="ewK-cG-Xjt"/>
@@ -88,7 +94,7 @@
         <!--Second View Controller-->
         <scene sceneID="TBc-6J-ofX">
             <objects>
-                <viewController id="NOO-z1-y2O" customClass="SecondViewController" customModule="RightOnTarget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="NOO-z1-y2O" customClass="SecondViewController" customModule="RightOnTarget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Muk-8f-D6R">
                         <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,6 +105,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Назад">
                                     <color key="baseForegroundColor" red="0.070588235289999995" green="0.50196078430000002" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="hideCurrentScene" destination="NOO-z1-y2O" eventType="touchUpInside" id="uAB-bO-Wjy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zml-0v-v1l"/>
@@ -108,6 +117,7 @@
                             <constraint firstItem="mnb-9G-s6B" firstAttribute="centerX" secondItem="Muk-8f-D6R" secondAttribute="centerX" id="xVs-c4-wB2"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="fOz-7E-QBh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TuT-y4-mlv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
