@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4D083E842A9A30A800A472FC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D083E832A9A30A800A472FC /* Game.swift */; };
+		4D083E872A9A3A2A00A472FC /* GameRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D083E862A9A3A2A00A472FC /* GameRound.swift */; };
+		4D083E892A9A3A3B00A472FC /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D083E882A9A3A3B00A472FC /* Generator.swift */; };
 		4DF2EF782A83CB5800B221B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2EF772A83CB5800B221B9 /* AppDelegate.swift */; };
 		4DF2EF7A2A83CB5800B221B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2EF792A83CB5800B221B9 /* SceneDelegate.swift */; };
 		4DF2EF7C2A83CB5800B221B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2EF7B2A83CB5800B221B9 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		4D083E832A9A30A800A472FC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		4D083E862A9A3A2A00A472FC /* GameRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRound.swift; sourceTree = "<group>"; };
+		4D083E882A9A3A3B00A472FC /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		4DF2EF742A83CB5800B221B9 /* RightOnTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightOnTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF2EF772A83CB5800B221B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF2EF792A83CB5800B221B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +49,8 @@
 			isa = PBXGroup;
 			children = (
 				4D083E832A9A30A800A472FC /* Game.swift */,
+				4D083E862A9A3A2A00A472FC /* GameRound.swift */,
+				4D083E882A9A3A3B00A472FC /* Generator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +178,8 @@
 				4D083E842A9A30A800A472FC /* Game.swift in Sources */,
 				4DF2EF7C2A83CB5800B221B9 /* ViewController.swift in Sources */,
 				4DF2EF782A83CB5800B221B9 /* AppDelegate.swift in Sources */,
+				4D083E892A9A3A3B00A472FC /* Generator.swift in Sources */,
+				4D083E872A9A3A2A00A472FC /* GameRound.swift in Sources */,
 				4DF2EF7A2A83CB5800B221B9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

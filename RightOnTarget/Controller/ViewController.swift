@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         // Создаем метку для вывода номера версии
         let versionalLabel = UILabel(frame: CGRect(x: 30, y: 15, width: 120, height: 20))
         // изменяем текст метки
-        versionalLabel.text = "Версия 1.2"
+        versionalLabel.text = "Версия 1.3"
         //добавляем кастомный цвет #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         versionalLabel.textColor = #colorLiteral(red: 0.07058823529, green: 0.5019607843, blue: 0.1058823529, alpha: 1)
         //добавляем метку в родительский view
@@ -35,10 +35,12 @@ class ViewController: UIViewController {
     /* Метод viewDidLoad вызывается сразу после загрузки всех отображений (всех графических элементов) и прекрасно подходит для того, чтобы внести финальные правки перед выводом сцены на экран (или другими словами, перед добавлением графических элементов в иерархию вьюшек).*/
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Создаем экземпляр сущности "Игра"
-        game = Game(startValue: 1, endValue: 50, rounds: 5)
+        // Создаем генератор случайных чисел
+        let generator = NumberGenerator(startValue: 1, endValue: 50)!
+        // Создаем сущность игра
+        game = Game(valueGenerator: generator, rounds: 5)
         // Обновляем данные о текущем значении загаданного числа
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
 
     /* Метод viewWillAppear вызывается перед тем, как графические элементы сцены будут добавлены в иерархию графических элементов. Но в отличии от viewDidLoad он вызывается не один раз, а каждый раз, когда сцена добавляется в иерархию.*/
@@ -65,34 +67,36 @@ class ViewController: UIViewController {
     
     @IBAction func checkNumber() {
         // Высчитываем очки за раунд
-        game.calculateScore(with: Int(slider.value))
+        game.currentRound.calculateScore(with: Int(slider.value))
         // Проверяем, окончена ли игра
         if game.isGameEnded {
-        showAlertWith(score: game.score)
-            // Начинаем игру заново
+            // Показываем окно с итогами
+            showAlertWith(score: game.score)
+            // Рестартуем игру
             game.restartGame()
         } else {
+            // Начинаем новый раунд игры
             game.startNewRound()
         }
         // Обновляем данные о текущем значении загаданного числа
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
         
     }
 
     // MARK: - Обновление View
     // Обновление текста загаданного числа
-    private func updateLabelWithSecretNumber(newText: String ) {
+    func updateLabelWithSecretNumber(newText: String ) {
         label.text = newText
     }
 
     // Отображение всплывающего окна со счетом
-    private func showAlertWith(score: Int) {
-    let alert = UIAlertController(
-    title: "Игра окончена",
-    message: "Вы заработали \(score) очков",
-    preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "Начать заново", style: .default, handler: nil))
-    self.present(alert, animated: true, completion: nil)
+    private func showAlertWith( score: Int ) {
+        let alert = UIAlertController(
+                        title: "Игра окончена",
+                        message: "Вы заработали \(score) очков",
+                        preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Начать заново", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
